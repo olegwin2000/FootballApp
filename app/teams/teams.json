@@ -2,92 +2,112 @@
 	{
 		"name": "Leicester City",
 		"pts": "38",
-		"range": "Champions League"
+		"range": "Champions League",
+	    "imageURL": "img/teams/lei.png"
 	},
 	{
 		"name": "Arsenal",
 		"pts": "36",
-		"range": "Champions League"
+		"range": "Champions League",
+      "imageURL": "img/teams/ars.png"
 	},
 	{
 		"name": "Manchester City",
 		"pts": "32",
-		"range": "Champions League"
+		"range": "Champions League",
+      "imageURL": "img/teams/mc.png"
 	},
 	{
 		"name": "Tottenham Hotspur",
 		"pts": "29",
-		"range": "Champions League"
+		"range": "Champions League",
+      "imageURL": "img/teams/tot.png"
 	},
 	{
 		"name": "Manchester United",
 		"pts": "29",
-		"range": "Europa League"
+		"range": "Europa League",
+      "imageURL": "img/teams/mu.png"
 	},
 	{
 		"name": "Crystal Palace",
 		"pts": "29",
-		"range": "Europa League"
+		"range": "Europa League",
+      "imageURL": "img/teams/cp.png"
 	},
 	{
 		"name": "Watford",
 		"pts": "28",
-		"range": "Europa League"
+		"range": "Europa League",
+      "imageURL": "img/teams/wat.png"
 	},
 	{
 		"name": "West Ham United",
 		"pts": "25",
-		"range": "Europa League"
+		"range": "Europa League",
+      "imageURL": "img/teams/wh.png"
 	},
 	{
 		"name": "Liverpool",
-		"pts": "24"
+		"pts": "24",
+      "imageURL": "img/teams/liv.png"
 	},
 	{
 		"name": "Everton",
-		"pts": "23"
+		"pts": "23",
+      "imageURL": "img/teams/eve.png"
 	},
 	{
 		"name": "Stoke City",
-		"pts": "23"
+		"pts": "23",
+      "imageURL": "img/teams/sto.png"
 	},
 	{
 		"name": "Southampton",
-		"pts": "21"
+		"pts": "21",
+      "imageURL": "img/teams/sou.png"
 	},
 	{
 		"name": "West Bromwich Albion",
-		"pts": "20"
+		"pts": "20",
+      "imageURL": "img/teams/wb.png"
 	},
 	{
 		"name": "Bournemouth",
-		"pts": "19"
+		"pts": "19",
+      "imageURL": "img/teams/bou.png"
 	},
 	{
 		"name": "Chelsea",
-		"pts": "18"
+		"pts": "18",
+      "imageURL": "img/teams/che.png"
 	},
 	{
 		"name": "Norwich City",
-		"pts": "17"
+		"pts": "17",
+      "imageURL": "img/teams/nor.png"
 	},
 	{
 		"name": "Newcastle United",
-		"pts": "17"
+		"pts": "17",
+      "imageURL": "img/teams/nc.png"
 	},
 	{
 		"name": "Swansea City",
 		"pts": "15",
-		"range": "Outsider"
+		"range": "Outsider",
+      "imageURL": "img/teams/swa.png"
 	},
 	{
 		"name": "Sunderland",
 		"pts": "12",
-		"range": "Outsider"
+		"range": "Outsider",
+      "imageURL": "img/teams/sun.png"
 	},
 	{
 		"name": "Aston Villa",
 		"pts": "7",
-		"range": "Outsider"
+		"range": "Outsider",
+      "imageURL": "img/teams/ast.png"
 	}
 ]
