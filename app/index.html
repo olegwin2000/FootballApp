@@ -4,31 +4,16 @@
   <meta charset="utf-8">
   <title>Football Application</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
 </head>
-<body ng-controller="FootballAppCtrl">
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Team</th>
-                    <th>pts</th>
-                </tr>
-                </thead>
-                <tr ng-repeat = "team in teams" class="{{team.range | teamArea}}">
-                    <td>{{team.name}}</td>
-                    <td>{{team.pts}}</td>
-                    <!--<td class="{{team.range | teamArea}}">{{team.range | teamArea}}</td>-->
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
+<body>
 
+    <div ng-view></div>
 
 </body>
 </html>
