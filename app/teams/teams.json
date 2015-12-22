@@ -1,0 +1,82 @@
+[
+	{
+		"name": "Leicester City",
+		"pts": "38"
+	},
+	{
+		"name": "Arsenal",
+		"pts": "36"
+	},
+	{
+		"name": "Manchester City",
+		"pts": "32"
+	},
+	{
+		"name": "Tottenham Hotspur",
+		"pts": "29"
+	},
+	{
+		"name": "Manchester United",
+		"pts": "29"
+	},
+	{
+		"name": "Crystal Palace",
+		"pts": "29"
+	},
+	{
+		"name": "Watford",
+		"pts": "28"
+	},
+	{
+		"name": "West Ham United",
+		"pts": "25"
+	},
+	{
+		"name": "Liverpool",
+		"pts": "24"
+	},
+	{
+		"name": "Everton",
+		"pts": "23"
+	},
+	{
+		"name": "Stoke City",
+		"pts": "23"
+	},
+	{
+		"name": "Southampton",
+		"pts": "21"
+	},
+	{
+		"name": "West Bromwich Albion",
+		"pts": "20"
+	},
+	{
+		"name": "Bournemouth",
+		"pts": "19"
+	},
+	{
+		"name": "Chelsea",
+		"pts": "18"
+	},
+	{
+		"name": "Norwich City",
+		"pts": "17"
+	},
+	{
+		"name": "Newcastle United",
+		"pts": "17"
+	},
+	{
+		"name": "Swansea City",
+		"pts": "15"
+	},
+	{
+		"name": "Sunderland",
+		"pts": "12"
+	},
+	{
+		"name": "Aston Villa",
+		"pts": "7"
+	}
+]

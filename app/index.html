@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="FootballApp">
+<head>
+  <meta charset="utf-8">
+  <title>Football Application</title>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="FootballAppCtrl">
+
+<table>
+	<tr ng-repeat = "team in teams">
+		<td>{{team.name}}</td>
+		<td>{{team.pts}}</td>
+	</tr>
+</table>
+
+</body>
+</html>
