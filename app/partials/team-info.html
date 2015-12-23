@@ -1,1 +1,16 @@
-<span>TBD: detail view for {{teamId}}</span>
+<h2>{{team.fullName}}</h2>
+<h3>Founded in {{team.year}}</h3>
+<img ng-src="{{team.image}}" class="img-thumbnail">
+
+<table class="table table-condensed">
+    <thead>
+    <!--<th>no.</th>-->
+    <th>pos.</th>
+    <th>Name</th>
+    </thead>
+    <tr ng-repeat="player in team.players">
+        <!--<td>{{player.no}}</td>-->
+        <td>{{player.pos}}</td>
+        <td>{{player.name}}</td>
+    </tr>
+</table>

@@ -11,7 +11,9 @@ footballAppControllers.controller('TeamsListCtrl', ['$scope', '$http',
     });
     $scope.orderProp = '-pts';
 }]);
-footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams',
-    function($scope, $routeParams){
-        $scope.teamId = $routeParams.teamId;
+footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$http',
+    function($scope, $routeParams, $http){
+        $http.get('teams/' + $routeParams.teamId + '.json').success(function(data){
+            $scope.team = data;
+        });
 }]);

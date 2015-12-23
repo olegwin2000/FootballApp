@@ -1,0 +1,58 @@
+{
+  "players":
+  [
+    {
+      "name": "Kasper Schmeichel",
+      "pos": "GK",
+      "no": "1"
+    },
+    {
+      "name": "Ritchie de Laet",
+      "pos": "DF",
+      "no": 2
+    },
+    {
+      "name": "Danny Drinkwater",
+      "pos": "MF",
+      "no": 4
+    },
+    {
+      "name": "Wes Morgan",
+      "pos": "DF",
+      "no": 5
+    },
+    {
+      "name": "Robert Huth",
+      "pos": "DF",
+      "no": 6
+    },
+    {
+      "name": "Matty James",
+      "pos": "GK",
+      "no": 8
+    },
+    {
+      "name": "Jamie Vardy",
+      "pos": "FW",
+      "no": 9
+    },
+    {
+      "name": "Andy King",
+      "pos": "MF",
+      "no": 10
+    },
+    {
+      "name": "Marc Albrighton",
+      "pos": "MF",
+      "no": 11
+    },
+    {
+      "name": "N'Golo Kant?",
+      "pos": "MF",
+      "no": 14
+    }
+  ],
+  "year": 1884,
+  "fullName": "Leicester City Football Club",
+  "image": "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg"
+}
