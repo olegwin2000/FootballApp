@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <p>search: <input ng-model="query"></p>
+            <p>Sort by:
+                <select ng-model="orderProp">
+                    <option value="name">Alphabetical></option>
+                    <option value ="-pts">By points</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-md-3">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Team</th>
+                    <th>pts</th>
+                </tr>
+                </thead>
+                <tr ng-repeat = "team in teams | filter: query | orderBy: orderProp" class="{{team.range | teamArea}}">
+                    <td><a href="#/teams/{{team.id}}"><img class="img-thumbnail img-rounded" ng-src="{{team.imageURL}}"></a></td>
+                    <td><a href="#/teams/{{team.id}}">{{team.name}}</a></td>
+                    <td>{{team.pts}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>
