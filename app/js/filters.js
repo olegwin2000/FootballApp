@@ -2,7 +2,7 @@
 
 /* Filters */
 
-angular.module('FootballAppFilters', []).filter('teamArea', function(){
+angular.module('footballAppFilters', []).filter('teamArea', function(){
     return function(input) {
         switch (input){
             case 'Champions League':
