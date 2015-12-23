@@ -2,11 +2,16 @@
 
 /* Controllers */
 
-var footballApp = angular.module('FootballApp', ['FootballAppFilters']);
+var footballAppControllers = angular.module('footballAppControllers', []);
 
-footballApp.controller('FootballAppCtrl', ['$scope', '$http', function($scope, $http) {
-  $http.get('teams/teams.json').success(function(data) {
-    $scope.teams = data;
-  });
-
+footballAppControllers.controller('TeamsListCtrl', ['$scope', '$http',
+    function($scope, $http) {
+    $http.get('teams/teams.json').success(function(data) {
+        $scope.teams = data;
+    });
+    $scope.orderProp = '-pts';
+}]);
+footballAppControllers.controller('TeamsInfoCtrl', ['$scope', '$routeParams',
+    function($scope, $routeParams){
+        $scope.teamId = $routeParams.phoneId;
 }]);
