@@ -19,8 +19,8 @@
                 </tr>
                 </thead>
                 <tr ng-repeat = "team in teams | filter: query | orderBy: orderProp" class="{{team.range | teamArea}}">
-                    <td><a href="#/teams/{{team.id}}"><img class="img-thumbnail img-rounded" ng-src="{{team.imageURL}}"></a></td>
-                    <td><a href="#/teams/{{team.id}}">{{team.name}}</a></td>
+                    <td><a href="#/teams/{{team.name}}"><img class="img-thumbnail img-rounded" ng-src="{{team.imageURL}}"></a></td>
+                    <td><a href="#/teams/{{team.name}}">{{team.name}}</a></td>
                     <td>{{team.pts}}</td>
                 </tr>
             </table>
