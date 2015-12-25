@@ -8,6 +8,7 @@ footballAppControllers.controller('TeamsListCtrl', ['$scope', '$http',
     function($scope, $http) {
     $http.get('teams/teams.json').success(function(data) {
         $scope.teams = data;
+        //console.log(data);
     });
     $scope.orderProp = '-pts';
 }]);
@@ -17,3 +18,10 @@ footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$h
             $scope.team = data;
         });
 }]);
+footballAppControllers.controller('TeamsMatchCtrl', ['$scope',
+    function($scope){
+        $scope.showTeams = function(){
+            return $scope.teams;
+        }
+    }
+])

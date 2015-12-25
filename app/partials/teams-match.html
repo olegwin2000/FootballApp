@@ -1,6 +1,13 @@
-<div class="col-md-6">
-    <h1>{{teamA}}</h1>
-</div>
-<div class="col-md-6">
-    <h1>{{teamB}}</h1>
+<div class="container-fluid" ng-controller="TeamsMatchCtrl">
+    <div class="row-fluid">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <h1>Team1:</h1>
+            <h2>{{teamA}}</h2>
+            <img ng-src="{{teamA.imageURL}}" >
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <h1>Team2: {{teamB}}</h1>
+        </div>
+        <pre>{{showTeams()}}<pre>
+    </div>
 </div>

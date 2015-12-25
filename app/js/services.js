@@ -5,3 +5,8 @@ footballAppServices.factory('Team', ['$resource',
             query: {method: 'GET', params: {phoneId: 'phones'}, isArray:true}
         });
 }]);
+footballAppServices.factory('Match', ['$scope', function($scope){
+    return {
+        showTeams: function(){console.log('hello')}
+    };
+}])
