@@ -1,7 +1,8 @@
 var footballApp = angular.module('FootballApp', [
     'ngRoute',
     'footballAppControllers',
-    'footballAppFilters'
+    'footballAppFilters',
+    'footballAppServices'
 ]);
 footballApp.config(['$routeProvider',
     function($routeProvider) {

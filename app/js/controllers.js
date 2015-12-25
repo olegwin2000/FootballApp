@@ -4,12 +4,13 @@
 
 var footballAppControllers = angular.module('footballAppControllers', []);
 
-footballAppControllers.controller('TeamsListCtrl', ['$scope', '$http',
-    function($scope, $http) {
-    $http.get('teams/teams.json').success(function(data) {
-        $scope.teams = data;
-    });
-    $scope.orderProp = '-pts';
+footballAppControllers.controller('TeamsListCtrl', ['$scope', 'Team',
+    function($scope, Team) {
+        //$http.get('teams/teams.json').success(function(data) {
+        //    $scope.teams = data;
+        //});
+        $scope.teams = Team.query();
+        $scope.orderProp = '-pts';
 }]);
 footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$http',
     function($scope, $routeParams, $http){
