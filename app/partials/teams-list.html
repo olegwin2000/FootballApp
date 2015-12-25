@@ -8,6 +8,21 @@
                     <option value ="-pts">By points</option>
                 </select>
             </p>
+            <p>Select teams to match: <br/>
+                Team1:
+                <select ng-model="teamA">
+                    <option ng-repeat="team in teams | orderBy: team.name">
+                        {{team.name}}
+                    </option>
+                </select>
+                <br/>
+                Team2:
+                <select ng-model="teamB">
+                    <option ng-repeat="team in teams |orderBy: team.name">
+                        {{team.name}}
+                    </option>
+                </select>
+            </p>
         </div>
         <div class="col-md-3">
             <table class="table">
@@ -25,7 +40,7 @@
                 </tr>
             </table>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" ng-include src="'partials/teams-match.html'">
 
         </div>
     </div>
