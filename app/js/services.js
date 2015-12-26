@@ -7,6 +7,6 @@ footballAppServices.factory('Team', ['$resource',
 }]);
 footballAppServices.factory('Match', ['$scope', function($scope){
     return {
-        showTeams: function(){console.log('hello')}
+        showTeams: function(){return 'hello'}
     };
 }])

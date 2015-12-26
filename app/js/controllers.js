@@ -21,7 +21,10 @@ footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$h
 footballAppControllers.controller('TeamsMatchCtrl', ['$scope',
     function($scope){
         $scope.showTeams = function(){
-            return $scope.teams;
-        }
+            var data = JSON.parse($scope.teams);
+            for (var team in data){
+                console.log(team);
+            }
+        };
     }
 ])
