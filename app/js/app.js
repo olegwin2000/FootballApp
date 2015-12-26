@@ -1,7 +1,8 @@
 var footballApp = angular.module('FootballApp', [
     'ngRoute',
     'footballAppControllers',
-    'footballAppFilters'
+    'footballAppFilters',
+    'footballAppDirectives'
 ]);
 footballApp.config(['$routeProvider',
     function($routeProvider) {
@@ -13,6 +14,10 @@ footballApp.config(['$routeProvider',
             when('/teams/:teamId', {
                 templateUrl: 'partials/team-info.html',
                 controller: 'TeamInfoCtrl'
+            }).
+            when('/chess-table', {
+                templateUrl: 'partials/chess-table.html',
+                controller: 'ChessTableCtrl'
             }).
             otherwise({
                 redirectTo: '/teams'
