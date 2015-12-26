@@ -15,10 +15,6 @@ footballApp.config(['$routeProvider',
                 templateUrl: 'partials/team-info.html',
                 controller: 'TeamInfoCtrl'
             }).
-            when('/chess-table', {
-                templateUrl: 'partials/chess-table.html',
-                controller: 'ChessTableCtrl'
-            }).
             otherwise({
                 redirectTo: '/teams'
             });

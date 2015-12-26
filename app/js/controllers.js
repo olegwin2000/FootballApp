@@ -17,8 +17,4 @@ footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$h
             $scope.team = data;
         });
 }]);
-footballAppControllers.controller('ChessTableCtrl', ['$scope',
-    function($scope) {
-        $scope.helloworld = 'Hello world';
-    }
-])
+
