@@ -6,7 +6,7 @@ var footballAppControllers = angular.module('footballAppControllers', []);
 
 footballAppControllers.controller('TeamsListCtrl', ['$scope', '$http',
     function($scope, $http) {
-    $http.get('teams/teams.json').success(function(data) {
+    $http.get('teams/england.json').success(function(data) {
         $scope.teams = data;
     });
     $scope.orderProp = '-pts';
@@ -17,4 +17,8 @@ footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$h
             $scope.team = data;
         });
 }]);
+footballAppControllers.controller('ChessTableCtrl', ['$scope', function($scope){
+    $scope.data1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    $scope.data2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
+}])

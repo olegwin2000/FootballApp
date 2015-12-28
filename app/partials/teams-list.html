@@ -1,32 +1,17 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
-            <p>search: <input ng-model="query"></p>
+        <div class="col-md-4">
+            <!--<p>search: <input ng-model="query"></p>-->
+            <h2>Scoreboard</h2>
             <p>Sort by:
                 <select ng-model="orderProp">
                     <option value="name">Alphabetical></option>
                     <option value ="-pts">By points</option>
                 </select>
             </p>
-            
-            <br/>
-            <a href="#/chess-table">Chess-table</a>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Team</th>
-                    <th>pts</th>
-                </tr>
-                </thead>
-                <tr ng-repeat = "team in teams | filter: query | orderBy: orderProp" class="{{team.range | teamArea}}">
-                    <td><a href="#/teams/{{team.name}}"><img class="img-thumbnail img-rounded" ng-src="{{team.imageURL}}"></a></td>
-                    <td><a href="#/teams/{{team.name}}">{{team.name}}</a></td>
-                    <td>{{team.pts}}</td>
-                </tr>
-            </table>
+            <div ng-include="'partials/scoreboard.html'"></div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <h2>chess-table</h2>
             <chess-table></chess-table>
         </div>
