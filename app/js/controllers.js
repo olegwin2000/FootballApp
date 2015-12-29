@@ -9,6 +9,7 @@ footballAppControllers.controller('TeamsListCtrl', ['$scope', 'TeamsService', '$
         //$scope.teams = TeamsService.getData();
     $http.get('teams/england.json').success(function(data) {
         $scope.teams = data;
+        TeamsService.teams = data;
     });
     $scope.orderProp = '-pts';
 }]);
@@ -16,6 +17,7 @@ footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$h
     function($scope, $routeParams, $http){
         $http.get('teams/' + $routeParams.teamId + '.json').success(function(data){
             $scope.team = data;
+
         });
 }]);
 footballAppControllers.controller('ChessTableCtrl', ['$scope', function($scope){
@@ -30,34 +32,14 @@ footballAppControllers.controller('TourCtrl', ['$scope', '$routeParams', 'TeamsS
     function($scope, $routeParams, TeamsService){
         $scope.tourNo = $routeParams.tourNo;
         //$scope.matches = TeamsService.getTour($scope.tourNo);
-        $scope.matches = [
-            {
-                team1: 'team1',
-                team2: 'team2',
-                result1: 5,
-                result2: 0
-            },
-            {
-                team1: 'team3',
-                team2: 'team4',
-                result1: 4,
-                result2: 2
-            },
-            {
-                team1: 'team5',
-                team2: 'team6',
-                result1: 3,
-                result2: 3
-            },
-            {
-                team1: 'team7',
-                team2: 'team8',
-                result1: 8,
-                result2: 3
-            },
-        ]
+        $scope.logTours = function(){
+            //console.log(TeamsService.getTour());
+            console.log(TeamsService.teams);
+        }
+        $scope.matches = TeamsService.getTour(TeamsService.teams, $scope.tourNo);
     }
 ]);
-footballAppControllers.controller('NavbarCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
-    $routeParams.tourNo = $scope.tourNo;
-}])
+footballAppControllers.controller('NavbarCtrl', ['$scope', 'TeamsService', function($scope, TeamsService){
+    //$routeParams.tourNo = $scope.tourNo;
+    $scope.toursArray = TeamsService.getToursArray;
+}]);
