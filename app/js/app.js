@@ -17,8 +17,8 @@ footballApp.config(['$routeProvider',
                 templateUrl: 'partials/team-info.html',
                 controller: 'TeamInfoCtrl'
             }).
-            when('/tour', {
-                template: 'tbd: tour',
+            when('/tour:tourNo', {
+                templateUrl: 'partials/tour-info.html',
                 controller: 'TourCtrl'
             }).
             otherwise({

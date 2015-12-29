@@ -1,0 +1,17 @@
+<div>
+    <h2>Tour: {{tourNo}}</h2>
+    <table class="table  table-bordered">
+        <thead>
+            <td>team 1</td>
+            <td colspan="2">score</td>
+            <td>team2</td>
+        </thead>
+        <tr ng-repeat="match in matches">
+            <td>{{match.team1}}</td>
+            <td>{{match.result1}}</td>
+            <td>{{match.result2}}</td>
+            <td>{{match.team2}}</td>
+        </tr>
+    </table>
+</div>
+

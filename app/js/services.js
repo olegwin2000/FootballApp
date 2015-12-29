@@ -6,5 +6,18 @@ footballAppServices.factory('Team', ['$resource',
         });
 }]);
 footballAppServices.service('TeamsService', function(){
+    var matchesData = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
+    function getTourMatches(tour, teamsArray) {
 
+    }
+    this.setResult = function(team1, team2, result1, result2){
+        matchesData[team1][team2] = '' + result1 + ':' + result2;
+    }
+    this.getMatchesData = function(){
+        console.log(matchesData);
+    };
+    this.getTour = function(tourNo, teamsArray){
+        var tour = parseInt(tourNo);
+        return getTourMatches(tour, teamsArray)
+    }
 })

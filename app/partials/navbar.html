@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" ng-controller="NavbarCtrl">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -15,10 +15,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#/chessTable">Chess-Table</a></li>
-                <li><a href="#/tour">Tour:</a></li>
+                <li><a ng-href="#/tour{{tourNo}}">Tour:</a></li>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <select ng-model="orderProp" class="form-control">
+                        <select ng-model="tourNo" class="form-control">
                             <option ng-repeat="tour in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]" value="{{tour}}">{{tour}}</option>
                         </select>
 

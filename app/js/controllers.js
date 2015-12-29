@@ -8,7 +8,6 @@ footballAppControllers.controller('TeamsListCtrl', ['$scope', 'TeamsService', '$
     function($scope, TeamsService, $http) {
         //$scope.teams = TeamsService.getData();
     $http.get('teams/england.json').success(function(data) {
-        console.log(data);
         $scope.teams = data;
     });
     $scope.orderProp = '-pts';
@@ -23,20 +22,42 @@ footballAppControllers.controller('ChessTableCtrl', ['$scope', function($scope){
     //$scope.teams = TeamsService.getData();
     $http.get('teams/england.json').success(function(data) {
         console.log(data);
-        $scope.teams = data;
+        $scope.teams = JSON.parse(data);
     });
-    $scope.data1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-    $scope.data2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-    $scope.data = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
-    $scope.changeValue = function(team1, team2, value){
-        $scope.data[team1][team2] = value;
-        $scope.data[team2][team1] = -value;
-    }
-    $scope.model = '1'
-    //$scope.log = function(){
-    //    console.log($scope.data);
-    //}
-}])
-footballAppControllers.controller('TourCtrl', function(){
 
-})
+}])
+footballAppControllers.controller('TourCtrl', ['$scope', '$routeParams', 'TeamsService',
+    function($scope, $routeParams, TeamsService){
+        $scope.tourNo = $routeParams.tourNo;
+        //$scope.matches = TeamsService.getTour($scope.tourNo);
+        $scope.matches = [
+            {
+                team1: 'team1',
+                team2: 'team2',
+                result1: 5,
+                result2: 0
+            },
+            {
+                team1: 'team3',
+                team2: 'team4',
+                result1: 4,
+                result2: 2
+            },
+            {
+                team1: 'team5',
+                team2: 'team6',
+                result1: 3,
+                result2: 3
+            },
+            {
+                team1: 'team7',
+                team2: 'team8',
+                result1: 8,
+                result2: 3
+            },
+        ]
+    }
+]);
+footballAppControllers.controller('NavbarCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+    $routeParams.tourNo = $scope.tourNo;
+}])
