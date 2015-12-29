@@ -5,3 +5,6 @@ footballAppServices.factory('Team', ['$resource',
             query: {method: 'GET', params: {phoneId: 'phones'}, isArray:true}
         });
 }]);
+footballAppServices.service('TeamsService', function(){
+
+})

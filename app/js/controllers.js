@@ -4,9 +4,11 @@
 
 var footballAppControllers = angular.module('footballAppControllers', []);
 
-footballAppControllers.controller('TeamsListCtrl', ['$scope', '$http',
-    function($scope, $http) {
+footballAppControllers.controller('TeamsListCtrl', ['$scope', 'TeamsService', '$http',
+    function($scope, TeamsService, $http) {
+        //$scope.teams = TeamsService.getData();
     $http.get('teams/england.json').success(function(data) {
+        console.log(data);
         $scope.teams = data;
     });
     $scope.orderProp = '-pts';
@@ -18,6 +20,11 @@ footballAppControllers.controller('TeamInfoCtrl', ['$scope', '$routeParams', '$h
         });
 }]);
 footballAppControllers.controller('ChessTableCtrl', ['$scope', function($scope){
+    //$scope.teams = TeamsService.getData();
+    $http.get('teams/england.json').success(function(data) {
+        console.log(data);
+        $scope.teams = data;
+    });
     $scope.data1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     $scope.data2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     $scope.data = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
@@ -30,3 +37,6 @@ footballAppControllers.controller('ChessTableCtrl', ['$scope', function($scope){
     //    console.log($scope.data);
     //}
 }])
+footballAppControllers.controller('TourCtrl', function(){
+
+})
