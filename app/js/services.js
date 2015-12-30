@@ -5,9 +5,24 @@ footballAppServices.factory('Team', ['$resource',
             query: {method: 'GET', params: {phoneId: 'phones'}, isArray:true}
         });
 }]);
-footballAppServices.service('TeamsService', function(){
+footballAppServices.service('TeamsService', ['$http', function($http){
     var matchesData = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
-    var teams;
+    this.getMatchesData = function(){
+        return matchesData;
+    }
+    var currentData = 'england';
+    //var teams;
+    var getData = function(){
+        var data;
+        $http.get('teams/england.json').success(function(response) {
+             data = response;
+        });
+        return data;
+    }
+    this.getTeams = function(){
+        return getData();
+    }
+
     this.getToursArray = function(){
         var array = [];
         for (var team = 0; team < 38; team++){
@@ -44,15 +59,30 @@ footballAppServices.service('TeamsService', function(){
         }
         return getSchedule(teamsArray)[tour - 1];
     }
+    function setVict(team1, team2){
+        teams[team1].won++;
+        teams[team2].los++;
+    }
+    function setDraw(team1, team2){
+        teams[team1].drw++;
+        teams[team2].drw++;
+    }
     this.setResult = function(team1, team2, result1, result2){
-        matchesData[team1][team2] = '' + result1 + ':' + result2;
+        if (!matchesData[team1][team2]) {
+            if (result1 > result2) {
+                setVict(team1, team2)
+            } else if (result2 > result1){
+                setVict(team2, team1)
+            } else setDraw(team1, team2);
+            matchesData[team1][team2] = true;
+        }
     }
     this.getMatchesData = function(){
-        console.log(matchesData);
+        //console.log(matchesData);
     };
     this.getTour = function(teamsArray, tourNo){
         var tour = parseInt(tourNo);
         return getSchedule(teamsArray, tourNo);
     };
 
-})
+}])

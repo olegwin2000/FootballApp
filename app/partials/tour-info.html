@@ -7,12 +7,16 @@
             <td colspan="2">score</td>
             <td>team2</td>
         </thead>
-        <tr ng-repeat="match in matches">
+        <tr ng-repeat="(i, match) in matches">
             <td>{{match.team1.name}}</td>
             <td><input type="text" ng-model="match.result1"></td>
             <td><input type="text" ng-model="match.result2"></td>
             <td>{{match.team2.name}}</td>
         </tr>
     </table>
+    <button ng-click="submit()">submit</button>
+    <ul ng-repeat="match in matches">
+        <li>{{match.result1}} : {{match.result2}}</li>
+    </ul>
 </div>
 
