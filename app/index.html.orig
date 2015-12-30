@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <title>Football Application</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="css/app.css">
+=======
+>>>>>>> master
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -14,6 +17,7 @@
   <script src="js/directives.js"></script>
   <script src="js/services.js"></script>
 </head>
+<<<<<<< HEAD
 <body>
 <div ng-include="'partials/navbar.html'"></div>
 <div class="container-fluid">
@@ -26,6 +30,29 @@
     </div>
   </div>
 </div>
+<!--<div ng-view></div>-->
+=======
+<body ng-controller="FootballAppCtrl">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table-striped">
+                <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>pts</th>
+                </tr>
+                </thead>
+                <tr ng-repeat = "team in teams">
+                    <td>{{team.name}}</td>
+                    <td>{{team.pts}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+>>>>>>> master
 
 </body>
 </html>
