@@ -11,7 +11,7 @@ footballAppServices.service('TeamsService', ['$http', function($http){
         return matchesData;
     }
     var currentData = 'england';
-    //var teams;
+    var teams;
     var getData = function(){
         var data;
         $http.get('teams/england.json').success(function(response) {
@@ -51,7 +51,7 @@ footballAppServices.service('TeamsService', ['$http', function($http){
                         away = swap;
                     }
 
-                    matches.push({team1: teamsArray[home], team2: teamsArray[away]});
+                    matches.push({team1: home, team2: away});
                 }
                 rounds.push(matches);
             }
@@ -59,26 +59,32 @@ footballAppServices.service('TeamsService', ['$http', function($http){
         }
         return getSchedule(teamsArray)[tour - 1];
     }
-    function setVict(team1, team2){
-        teams[team1].won++;
-        teams[team2].los++;
+    function setVict(teamsArray, team1, team2){
+        teamsArray[team1].won++;
+        teamsArray[team2].los++;
     }
-    function setDraw(team1, team2){
-        teams[team1].drw++;
-        teams[team2].drw++;
+    function setDraw(teamsArray, team1, team2){
+        teamsArray[team1].drw++;
+        teamsArray[team2].drw++;
     }
-    this.setResult = function(team1, team2, result1, result2){
+    this.setResult = function(teamsArray, team1, team2, result1, result2){
         if (!matchesData[team1][team2]) {
             if (result1 > result2) {
-                setVict(team1, team2)
+                setVict(teamsArray, team1, team2);
+                //matchesData[team1][team2] = '+';
             } else if (result2 > result1){
-                setVict(team2, team1)
-            } else setDraw(team1, team2);
-            matchesData[team1][team2] = true;
+                setVict(teamsArray, team2, team1)
+                //matchesData[team1][team2] = '-';
+            } else {
+                setDraw(teamsArray, team1, team2);
+                //matchesData[team1][team2] = ':';
+            };
+            matchesData[team1][team2] = result1 + ':' + result2;
         }
     }
     this.getMatchesData = function(){
         //console.log(matchesData);
+        return matchesData;
     };
     this.getTour = function(teamsArray, tourNo){
         var tour = parseInt(tourNo);

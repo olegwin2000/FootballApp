@@ -4,6 +4,6 @@
     </tr>
     <tr ng-repeat="(team1, team) in teams">
         <td ng-class="{in:$first}" title="{{team.name}}">{{team.name.slice(0,3)}}</td>
-        <td ng-repeat="(team2, team) in teams">matchesData[team1][team2]</td>
+        <td ng-repeat="(team2, team) in teams">{{matchesData[team1][team2]}}</td>
     </tr>
 </table>

@@ -11,7 +11,7 @@ footballApp.config(['$routeProvider',
             when('/chessTable', {
                 //templateUrl: 'partials/teams-list.html',
                 template: '<chess-table></chess-table>',
-                controller: 'TeamsListCtrl'
+                controller: 'ChessTableCtrl'
             }).
             when('/teams/:teamId', {
                 templateUrl: 'partials/team-info.html',

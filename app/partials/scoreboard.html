@@ -11,7 +11,7 @@
             <th>pts</th>
         </tr>
         </thead>
-        <tr ng-repeat = "team in teams | filter: query | orderBy: orderProp" class="{{team.range | teamArea}}">
+        <tr ng-repeat = "team in teams | filter: query | orderBy: '-(won*3 + drw)'" class="{{team.range | teamArea}}">
             <td><a href="#/teams/{{team.name}}">{{team.name}}</a></td>
             <td>{{team.won + team.drw + team.los}}</td>
             <td>{{team.won}}</td>
