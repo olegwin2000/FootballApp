@@ -30,7 +30,6 @@
     </div>
   </div>
 </div>
-<!--<div ng-view></div>-->
 =======
 <body ng-controller="FootballAppCtrl">
 <div class="container-fluid">
