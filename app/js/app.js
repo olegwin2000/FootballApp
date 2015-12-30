@@ -22,6 +22,6 @@ footballApp.config(['$routeProvider',
                 controller: 'TourCtrl'
             }).
             otherwise({
-                redirectTo: '/chessTable'
+                redirectTo: '/tour1'
             });
 }]);

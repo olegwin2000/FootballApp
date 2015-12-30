@@ -9,14 +9,12 @@
         </thead>
         <tr ng-repeat="(i, match) in matches">
             <td class="team1">{{teams[match.team1].name}}</td>
-            <td><input type="text" ng-model="match.result1"></td>
-            <td><input type="text" ng-model="match.result2"></td>
+            <td><input type="text" ng-model="match.result1">{{matchesData[match.team1][match.team2].result1}}</td>
+            <td><input type="text" ng-model="match.result2">{{matchesData[match.team1][match.team2].result2}}</td>
             <td class="team2">{{teams[match.team2].name}}</td>
         </tr>
     </table>
     <button ng-click="submit()">submit</button>
-    <ul ng-repeat="match in matches">
-        <li>{{match.result1}} : {{match.result2}}</li>
-    </ul>
+
 </div>
 

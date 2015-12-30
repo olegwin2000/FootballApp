@@ -1,9 +1,15 @@
-<table class="table table-bordered chess-table" >
-    <tr>
-        <td></td><td ng-repeat="team in teams" title="{{team.name}}">{{team.name.slice(0,3)}}</td>
-    </tr>
-    <tr ng-repeat="(team1, team) in teams">
-        <td ng-class="{in:$first}" title="{{team.name}}">{{team.name.slice(0,3)}}</td>
-        <td ng-repeat="(team2, team) in teams">{{matchesData[team1][team2]}}</td>
-    </tr>
-</table>
+<div>
+    <h2>All results</h2>
+    <table class="table table-bordered chess-table" >
+        <tr>
+            <td></td><td ng-repeat="team in teams" title="{{team.name}}">{{team.name.slice(0,3)}}</td>
+        </tr>
+        <tr ng-repeat="(team1, team) in teams">
+            <td ng-class="{in:$first}" title="{{team.name}}">{{team.name.slice(0,3)}}</td>
+            <td ng-repeat="(team2, team) in teams">
+                {{matchesData[team1][team2].result1}}:{{matchesData[team1][team2].result2}}
+            </td>
+        </tr>
+    </table>
+</div>
+

@@ -1,10 +1,9 @@
 var footballAppServices = angular.module('footballAppServices', ['ngResource']);
-footballAppServices.factory('Team', ['$resource',
-    function($resource){
-        return $resource('teams/:teamId.json', {}, {
-            query: {method: 'GET', params: {phoneId: 'phones'}, isArray:true}
-        });
-}]);
+footballAppServices.factory('Team', ['TeamsService',
+    function(TeamsService){
+
+    }
+]);
 footballAppServices.service('TeamsService', ['$http', function($http){
     var matchesData = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
     this.getMatchesData = function(){
@@ -79,7 +78,7 @@ footballAppServices.service('TeamsService', ['$http', function($http){
                 setDraw(teamsArray, team1, team2);
                 //matchesData[team1][team2] = ':';
             };
-            matchesData[team1][team2] = result1 + ':' + result2;
+            matchesData[team1][team2] = {result1: result1, result2: result2};
         }
     }
     this.getMatchesData = function(){

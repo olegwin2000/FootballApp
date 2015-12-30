@@ -36,7 +36,15 @@ footballAppControllers.controller('TourCtrl', ['$scope', '$routeParams', 'TeamsS
         //$scope.teams = TeamsService.getData();
         $scope.teams = TeamsService.teams;
         $scope.matches = TeamsService.getTour($scope.teams, $scope.tourNo);
+        $scope.matchesData = TeamsService.getMatchesData();
         $scope.submit = function(){
+            for (var i = 0; i < $scope.matches.length; i++){
+                var currMatch = $scope.matches[i];
+                if (!currMatch.result1 || !currMatch.result2) {
+                    alert('Enter all values for results!');
+                    return;
+                }
+            }
             $scope.matches.forEach(function(match){
                 //console.log(match);
                 console.log(match.team1, match.team2, match.result1, match.result2);
