@@ -1,16 +1,16 @@
 var footballAppServices = angular.module('footballAppServices', ['ngResource']);
-footballAppServices.factory('Team', ['TeamsService',
-    function(TeamsService){
+footballAppServices.factory('Team', function(){
 
     }
-]);
+);
 footballAppServices.service('TeamsService', ['$http', function($http){
     var matchesData = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
+
     this.getMatchesData = function(){
         return matchesData;
     }
     var currentData = 'england';
-    var teams;
+    var teams = this.teams;
     var getData = function(){
         var data;
         $http.get('teams/england.json').success(function(response) {
@@ -58,24 +58,32 @@ footballAppServices.service('TeamsService', ['$http', function($http){
         }
         return getSchedule(teamsArray)[tour - 1];
     }
-    function setVict(teamsArray, team1, team2){
+    function addGoals(team1, team2, res1, res2){
+        team1.scr += res1;
+        team2.msd += res1;
+        team1.msd += res2;
+        team2.scr += res2;
+    }
+    function setVict(teamsArray, team1, team2, res1, res2){
         teamsArray[team1].won++;
         teamsArray[team2].los++;
+        addGoals(team1, team2, res1, res2);
     }
-    function setDraw(teamsArray, team1, team2){
+    function setDraw(teamsArray, team1, team2, res1, res2){
         teamsArray[team1].drw++;
         teamsArray[team2].drw++;
+        addGoals(team1, team2, res1, res2);
     }
     this.setResult = function(teamsArray, team1, team2, result1, result2){
         if (!matchesData[team1][team2]) {
             if (result1 > result2) {
-                setVict(teamsArray, team1, team2);
+                setVict(teamsArray, team1, team2, result1, result2);
                 //matchesData[team1][team2] = '+';
             } else if (result2 > result1){
-                setVict(teamsArray, team2, team1)
+                setVict(teamsArray, team2, team1, result2, result1);
                 //matchesData[team1][team2] = '-';
             } else {
-                setDraw(teamsArray, team1, team2);
+                setDraw(teamsArray, team1, team2, result1, result2);
                 //matchesData[team1][team2] = ':';
             };
             matchesData[team1][team2] = {result1: result1, result2: result2};

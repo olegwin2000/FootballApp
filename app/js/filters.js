@@ -16,3 +16,13 @@ angular.module('footballAppFilters', []).filter('teamArea', function(){
         }
     }
 })
+.filter('chessTableFilter', function(){
+        return function(input){
+            if (!input) return '';
+            var res = input.result1 - input.result2;
+            if (res > 0) return 'won';
+            if (res < 0) return 'los';
+            if (res == 0) return 'drw';
+            return '';
+        }
+    })

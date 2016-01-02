@@ -59,5 +59,18 @@ footballAppControllers.controller('NavbarCtrl', ['$scope', 'TeamsService',
         //$routeParams.tourNo = $scope.tourNo;
         $scope.toursArray = TeamsService.getToursArray;
         $scope.tour = 1;
+        $scope.fillRandom = function(){
+            var teams = TeamsService.teams;
+            console.log('result');
+            for (var team1 = 0; team1 < teams.length; team1++){
+                for (var team2 = 0; team2 < teams.length; team2++){
+                    if (team1 == team2) continue;
+                    var res1 = Math.round(Math.random()*5);
+                    var res2 = Math.round(Math.random()*5);
+                    console.log(res1, res2)
+                    TeamsService.setResult(teams, team1, team2, res1, res2);
+                }
+            }
+        }
     }
 ]);

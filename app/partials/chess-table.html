@@ -6,7 +6,7 @@
         </tr>
         <tr ng-repeat="(team1, team) in teams">
             <td ng-class="{in:$first}" title="{{team.name}}">{{team.name.slice(0,3)}}</td>
-            <td ng-repeat="(team2, team) in teams">
+            <td ng-repeat="(team2, team) in teams" class="{{matchesData[team1][team2] | chessTableFilter}}">
                 {{matchesData[team1][team2].result1}}:{{matchesData[team1][team2].result2}}
             </td>
         </tr>

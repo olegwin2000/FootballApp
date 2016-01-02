@@ -21,3 +21,13 @@ td>input{
 .tour-info .team2 {
     text-align: right;
 }
+
+.chess-table .won {
+    background-color: rgba(144, 238, 144, 0.32);
+}
+.chess-table .los {
+    background-color: rgba(219, 0, 10, 0.34);
+}
+.chess-table .drw {
+    background-color: rgba(0, 0, 0, 0.19);
+}
